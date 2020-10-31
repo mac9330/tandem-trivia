@@ -4,7 +4,7 @@ import Navbar from "./components/navbar"
 import Trivia from "./components/trivia"
 export default () => (
     <div>
-          {<Navbar/>}
-          {<Trivia/>}
+          <Navbar/>
+          <Trivia/>
     </div>
 );

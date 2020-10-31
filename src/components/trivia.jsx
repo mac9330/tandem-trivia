@@ -1,21 +1,28 @@
 import React from "react"
-// import {connect} from "react-redux"
+import json from "../data/Apprentice_TandemFor400_Data.json"
+import Question from "./question";
 
-// const msp = () => ({
-// })
-
-// const mdp = () => ({
-// });
 
 class Trivia extends React.Component {
-    // constructor(props) {
-        //     super(props)
-        // }
+    constructor(props) {
+            super(props)
+
+            this.state = {
+                questions: this.shuffle(json),
+                count: 0,
+
+            }
+        }
+
+    shuffle(array) {
+        return array.sort(() => Math.random() - 0.5).slice(0, 10);
+    }
+
         
         render() {
             return (
                 <div>
-                   <h1>Hello There</h1> 
+                   <Question questions={this.state.questions} count={this.state.count} />
                 </div>
         )
     }
